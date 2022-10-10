@@ -6,6 +6,16 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddcourseComponent } from './addcourse/addcourse.component';
 import { ViewallcourseComponent } from './viewallcourse/viewallcourse.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const link:Routes=[
+  {
+    path:"",component:AddcourseComponent
+  },
+  {
+    path:"search",component:ViewallcourseComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -16,7 +26,8 @@ import { ViewallcourseComponent } from './viewallcourse/viewallcourse.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(link)
   ],
   providers: [],
   bootstrap: [AppComponent]
