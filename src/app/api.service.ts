@@ -6,9 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  constructor(private x:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   viewCourse=()=>{
-    return this.x.get("http://mylinkurcodesapp.herokuapp.com/getcourses")
+    return this.http.get("http://mylinkurcodesapp.herokuapp.com/getcourses")
   }
+
+  addCourse=(data:any)=>{
+    return this.http.post("https://mylinkurcodesapp.herokuapp.com/addcourse",data)
+  }
+  
 }
